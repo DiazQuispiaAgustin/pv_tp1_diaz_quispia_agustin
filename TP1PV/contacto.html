@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contacto - Cultura de Argentina</title>
+    <title>Contacto</title>
     
     <link rel="stylesheet" href="css/styles.css">
 </head>
@@ -17,20 +17,24 @@
                     <li><a href="contacto.html">Contacto</a></li>
                 </ul>
             </nav>
+        
+            <div class="container"><img src="img/images1acc.jpg" alt="Cargando imagen" class="logo"></div>
     </header>
     <article>
         <h2>Envía tu mensaje</h2>
-        <form action="enviar_mensaje.php" method="POST">
+        <form id="contact_form">
             <label for="nombre">Nombre:</label>
             <input type="text" id="nombre" name="nombre" required><br>
 
             <label for="email">Correo electrónico:</label>
             <input type="email" id="email" name="email" required><br>
 
+
+
             <label for="mensaje">Mensaje:</label><br>
             <textarea id="mensaje" name="mensaje" rows="4" required></textarea><br>
 
-            <button type="submit">Enviar mensaje</button>
+            <button type="submit" onclick="enviarformulario()"> Enviar mensaje</button>
         </form>
     </article>
     <aside>
@@ -40,5 +44,18 @@
     <footer>
         <p>&copy; 2025 Cultura de Argentina. Todos los derechos reservados.</p>
     </footer>
+
+    <script>
+        function enviarformulario(){
+
+          //event.preventDefault();
+
+          let nombre = document.getElementById("nombre").value;
+          let email = document.getElementById("email").value;
+
+
+          alert ("Nombre: " + nombre + "Email: " + email);
+        }
+    </script>
 </body>
 </html>
